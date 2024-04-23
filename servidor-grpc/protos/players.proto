@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package players;
+
+message Player {
+    string summonerid = 1;
+    string summonername = 2;
+    string tier = 3;
+    int32 wins = 4;
+    int32 losses = 5;
+    int32 lp = 6;
+}
+
+message PlayerRequest {
+    string summonerid = 1;
+}
+
+service Players {
+    rpc GetPlayer(PlayerRequest) returns (Player) {};
+}
